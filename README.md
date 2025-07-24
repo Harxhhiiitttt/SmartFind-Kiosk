@@ -99,4 +99,4 @@ CSS3
 
 ## Contact
 
-For questions or feedback, please reach out to the project maintainer.
+For questions or feedback, please reach out at: harshitsamantrai@gmail.com
