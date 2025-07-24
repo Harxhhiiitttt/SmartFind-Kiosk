@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Fish",
+    "price": 20,
+    "stock": 90,
+    "aisle": "D"
+  },
+  {
+    "id": 2,
+    "name": "Butter",
+    "price": 20,
+    "stock": 60,
+    "aisle": "B"
+  },
+  {
+    "id": 3,
+    "name": "Milk",
+    "price": 30,
+    "stock": 10,
+    "aisle": "A"
+  },
+  {
+    "id": 4,
+    "name": "Apple",
+    "price": 30,
+    "stock": 100,
+    "aisle": "E"
+  }
+]

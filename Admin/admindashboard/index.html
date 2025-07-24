@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!--axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!--css file-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="sidebar">
+      <a href="#" class="logo">
+        <i class="fab fa-slack"></i>
+        <span class="text">Admin Panel</span>
+      </a>
+
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#dashboard" class="nav-link" data-page="dashboard">
+            <i class="fas fa-border-all"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#store" class="nav-link" data-page="store">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="text">My Store</span>
+          </a>
+        </li>
+        <li>
+          <a href="#analytics" class="nav-link" data-page="analytics">
+            <i class="fas fa-chart-simple"></i>
+            <span class="text">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#message" class="nav-link" data-page="message">
+            <i class="fas fa-message"></i>
+            <span class="text">Message</span>
+          </a>
+        </li>
+        <li>
+          <a href="#team" class="nav-link" data-page="team">
+            <i class="fas fa-people-group"></i>
+            <span class="text">Team</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="side-menu">
+        <li>
+          <a href="#settings" class="nav-link" data-page="settings">
+            <i class="fas fa-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#logout" class="logout nav-link" data-page="logout">
+            <i class="fas fa-right-from-bracket"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <nav>
+        <i class="fas fa-bars menu-btn"></i>
+        <a href="#" class="nav-link">Categories</a>
+        <form onsubmit="return false;">
+          <div class="form-input">
+            <input type="search" placeholder="search..." />
+            <button type="button" class="search-btn">
+              <i class="fas fa-search search-icon"></i>
+            </button>
+          </div>
+        </form>
+
+        <input type="checkbox" hidden id="switch-mode" />
+        <label for="switch-mode" class="switch-mode"></label>
+
+        <a href="#" class="notification">
+          <i class="fas fa-bell"></i>
+          <span class="num">28</span>
+        </a>
+
+        <a href="#" class="profile">
+          <img src="profile.png" alt="" />
+        </a>
+      </nav>
+
+      <main>
+        <!-- Dashboard Page -->
+        <div class="page" id="dashboard">
+          <div class="head-title">
+            <div class="left">
+              <h1>Dashboard</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Dashboard</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Home</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- <a href="#" class="download-btn">
+              <i class="fas fa-cloud-download-alt"></i>
+              <span class="text">Download Report</span>
+            </a> -->
+          </div>
+
+          <div class="box-info">
+            <li>
+              <i class="fas fa-calendar-check"></i>
+              <span class="text">
+                <h3>1.5K</h3>
+                <p>New Orders</p>
+              </span>
+            </li>
+            <li>
+              <i class="fas fa-people-group"></i>
+              <span class="text">
+                <h3>1M</h3>
+                <p>Clients</p>
+              </span>
+            </li>
+            <li>
+              <i class="fas fa-dollar-sign"></i>
+              <span class="text">
+                <h3>₹900k</h3>
+                <p>Turnover</p>
+              </span>
+            </li>
+          </div>
+
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>Recent Orders</h3>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-filter"></i>
+              </div>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="https://imgs.search.brave.com/AMovRp7CGRezzaqEmE33gXLJpACvnyvcKXtQh2nyXwY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMxLnByb2dyZXNz/aXZlZ3JvY2VyLmNv/bS9pbWFnZXMvdi9t/YXhfd2lkdGhfMTQ0/MC9maWxlcy9zM2Zz/LXB1YmxpYy8yMDI0/LTAzL3BlcHNpX2xv/Z28uanBn" alt="" />
+                      <p>PepsiCo</p>
+                    </td>
+                    <td>17-05-2025</td>
+                    <td><span class="status pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="https://imgs.search.brave.com/fSu_dQQpEW6i3dB1N_YpOnKLBMnDl4aCIs5FN6n03po/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzM5LzEva3dhbGl0/eS13YWxscy0yMDAz/LWxvZ28tcG5nX3Nl/ZWtsb2dvLTM5Njgw/Mi5wbmc" alt="" />
+                      <p>Kwality Walls</p>
+                    </td>
+                    <td>07-05-2025</td>
+                    <td><span class="status pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="https://imgs.search.brave.com/2zVWKHrm3pAVJqVp3uKovbj1XBpndXWvgybaiY7Czbg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YnVpbHRpbi5jb20v/Y2RuLWNnaS9pbWFn/ZS9mPWF1dG8sZml0/PXNjYWxlLWRvd24s/dz0xMjgsaD0xMjgv/aHR0cHM6Ly9idWls/dGluLmNvbS9zaXRl/cy93d3cuYnVpbHRp/bi5jb20vZmlsZXMv/MjAyMi0xMC9HbG9i/YWxUZWNoX1NwYXJr/X2dyZWVuJTIwYmln/LnBuZw" alt="" />
+                      <p>Walmart Global</p>
+                    </td>
+                    <td>03-05-2025</td>
+                    <td><span class="status process">Process</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="https://imgs.search.brave.com/fA5XibsVQ6cDDe1BfV0W3uze-m7B1warHjGJEri5N_w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vYi9iOC9S/ZWxpYW5jZV9TbWFy/dF9CYXphYXIucG5n" alt="" />
+                      <p>Reliance Smart Bazaar</p>
+                    </td>
+                    <td>10-05-2025</td>
+                    <td><span class="status process">Process</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="https://imgs.search.brave.com/xW3ZIjL6hxjGZCseL0JYv8rG1AoplLoDm_RI57px_GA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL2FtdWw2/NDY5LmxvZ293aWsu/Y29tLndlYnA" alt="" />
+                      <p>Amul</p>
+                    </td>
+                    <td>07-05-2025</td>
+                    <td><span class="status complete">Complete</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="todo">
+              <div class="head">
+                <h3>Todos</h3>
+                <i class="fas fa-plus"></i>
+                <i class="fas fa-filter"></i>
+              </div>
+
+              <ul class="todo-list">
+                <li class="not-completed">
+                  <p>Order cheese</p>
+                  <i class="fas fa-ellipsis-vertical"></i>
+                </li>
+                <li class="not-completed">
+                  <p>Update honey stock</p>
+                  <i class="fas fa-ellipsis-vertical"></i>
+                </li>
+                <li class="completed">
+                  <p>Repair front door</p>
+                  <i class="fas fa-ellipsis-vertical"></i>
+                </li>
+                <li class="completed">
+                  <p>Fix lights for counter</p>
+                  <i class="fas fa-ellipsis-vertical"></i>
+                </li>
+                <li class="completed">
+                  <p>Clean aisle C</p>
+                  <i class="fas fa-ellipsis-vertical"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Store Page -->
+        <div class="page" id="store" style="display: none;">
+          <div class="head-title">
+            <div class="left">
+              <h1>My Store</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">My Store</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Products</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-info">
+            <div class="add-product">
+              <h3>Add New Product</h3>
+              <div class="form-input">
+                <input type="text" id="product-name" placeholder="Product Name" required />
+                <input type="number" id="product-price" placeholder="Price" step="0.01" required />
+                <input type="number" id="product-stock" placeholder="Stock" required />
+                <select id="product-aisle" required>
+                  <option value="" disabled selected>Select Aisle</option>
+                  <option value="A">Aisle A</option>
+                  <option value="B">Aisle B</option>
+                  <option value="C">Aisle C</option>
+                  <option value="D">Aisle D</option>
+                  <option value="E">Aisle E</option>
+                  <option value="F">Aisle F</option>
+                </select>
+                <button type="button" id="add-product-btn" class="download-btn">
+                  <i class="fas fa-plus"></i> Add Product
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>Product List</h3>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-filter"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Aisle</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="product-table-body">
+                  <!-- Products will be populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Page -->
+        <div class="page" id="analytics" style="display: none;">
+          <div class="head-title">
+            <div class="left">
+              <h1>Analytics</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Analytics</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Overview</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-info">
+            <li>
+              <i class="fas fa-chart-line"></i>
+              <span class="text">
+                <h3>75%</h3>
+                <p>Conversion Rate</p>
+              </span>
+            </li>
+            <li>
+              <i class="fas fa-users"></i>
+              <span class="text">
+                <h3>10K</h3>
+                <p>Visitors</p>
+              </span>
+            </li>
+          </div>
+        </div>
+
+        <!-- Message Page -->
+        <div class="page" id="message" style="display: none;">
+          <div class="head-title">
+            <div class="left">
+              <h1>Messages</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Messages</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Inbox</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>Inbox</h3>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-filter"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Sender</th>
+                    <th>Subject</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mohan Roy</td>
+                    <td>Order Issue</td>
+                    <td>2025-05-07</td>
+                  </tr>
+                  <tr>
+                    <td>Rajesh Khanna</td>
+                    <td>Feedback</td>
+                    <td>2025-05-06</td>
+                  </tr>
+                  <tr>
+                    <td>Amitabh Bacchan</td>
+                    <td>Survey Issue</td>
+                    <td>2025-05-10</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Page -->
+        <div class="page" id="team" style="display: none;">
+          <div class="head-title">
+            <div class="left">
+              <h1>Team</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Team</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Members</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-data">
+            <div class="order">
+              <div class="head">
+                <h3>Team Members</h3>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-filter"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Aryan Bose</td>
+                    <td>Developer</td>
+                    <td>Active</td>
+                  </tr>
+                  <tr>
+                    <td>Harshit Samant Rai</td>
+                    <td>Developer</td>
+                    <td>Active</td>
+                  </tr>
+                  <tr>
+                    <td>Snehadrita Pal</td>
+                    <td>Designer</td>
+                    <td>Active</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div class="page" id="settings" style="display: none;">
+          <div class="head-title">
+            <div class="left">
+              <h1>Settings</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Settings</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Preferences</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-info">
+            <li>
+              <i class="fas fa-cog"></i>
+              <span class="text">
+                <h3>Profile Settings</h3>
+                <p>Update your profile information</p>
+              </span>
+            </li>
+            <li>
+              <i class="fas fa-bell"></i>
+              <span class="text">
+                <h3>Notifications</h3>
+                <p>Manage notification preferences</p>
+              </span>
+            </li>
+          </div>
+        </div>
+
+        <!-- Logout Page -->
+        <div class="page" id="logout" style="display: none;">
+          <div class="head-title">
+            <div class="left">
+              <h1>Logout</h1>
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Logout</a>
+                </li>
+                <i class="fas fa-chevron-right"></i>
+                <li>
+                  <a href="#" class="active">Confirm</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-info">
+            <li>
+              <i class="fas fa-right-from-bracket"></i>
+              <span class="text">
+                <h3>Confirm Logout</h3>
+                <p>Are you sure you want to logout?</p>
+                <button class="download-btn">Logout</button>
+              </span>
+            </li>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

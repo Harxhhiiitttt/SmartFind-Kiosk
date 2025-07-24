@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFind</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome for search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px; padding: 2px;"><u>ABC Mart</u></div>
+    <div class="kiosk-container">
+        <div class="kiosk kiosk-green">
+            <div class="kiosk-header">KIOSK 1<br></div>
+            <div class="welcome-message">
+                Welcome to ABC mart!<br>We're happy you're here today :)<br><br>What item would you like assistance with?
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchBox1" class="form-control" placeholder="Search for an item">
+                <button type="button" class="btn" onclick="searchItem(1)">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="result1" class="result-message"></div>
+        </div>
+
+        <div class="kiosk kiosk-pink">
+            <div class="kiosk-header">KIOSK 2<br></div>
+            <div class="welcome-message">
+                Welcome to ABC mart!<br>We're happy you're here today :)<br><br>What item would you like assistance with?
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchBox2" class="form-control" placeholder="Search for an item">
+                <button type="button" class="btn" onclick="searchItem(2)">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="result2" class="result-message"></div>
+        </div>
+
+        <div class="kiosk kiosk-yellow">
+            <div class="kiosk-header">KIOSK 3<br></div>
+            <div class="welcome-message">
+                Welcome to ABC mart!<br>We're happy you're here today :)<br><br>What item would you like assistance with?
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchBox3" class="form-control" placeholder="Search for an item">
+                <button type="button" class="btn" onclick="searchItem(3)">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="result3" class="result-message"></div>
+        </div>
+    </div>
+
+    <div class="aisle-footer">
+        <h3>AISLES</h3>
+        <div class="aisle-buttons">
+            <button class="btn" id="aisleA" onclick="lightUpAisle('A')">A</button>
+            <button class="btn" id="aisleB" onclick="lightUpAisle('B')">B</button>
+            <button class="btn" id="aisleC" onclick="lightUpAisle('C')">C</button>
+            <button class="btn" id="aisleD" onclick="lightUpAisle('D')">D</button>
+            <button class="btn" id="aisleE" onclick="lightUpAisle('E')">E</button>
+            <button class="btn" id="aisleF" onclick="lightUpAisle('F')">F</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
